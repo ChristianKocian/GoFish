@@ -23,6 +23,8 @@ class Player
 
     Player(string name) {
        myName = name;
+       unsigned int currentTime =  (unsigned)time(0); // will be used for shuffly feature.
+       srand(currentTime);  //seed the random number generator
     }
 
     string getName() const {
@@ -42,7 +44,7 @@ class Player
     //OPTIONAL
     // comment out if you decide to not use it    
     //Does the player have a card with the same rank as c in her hand?
-    bool rankInHand(Card c) const; 
+//    bool rankInHand(Card c) const; 
     
     //uses some strategy to choose one card from the player's
     //hand so they can say "Do you have a 4?"
@@ -65,14 +67,14 @@ class Player
     //this function will check a players hand for a pair. 
     //If a pair is found, it returns true and populates the two variables with the cards tha make the pair.
 
-    bool checkHandForPair(Card &c1, Card &c2);
+//    bool checkHandForPair(Card &c1, Card &c2);
 
     //OPTIONAL
     // comment out if you decide to not use it    
     //Does the player have a card with the same rank as c in her hand?
     //e.g. will return true if the player has a 7d and the parameter is 7c
     
-    bool sameRankInHand(Card c) const; 
+//    bool sameRankInHand(Card c) const; 
     
     
   private:
