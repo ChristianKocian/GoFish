@@ -51,7 +51,7 @@ int main( ) {
    myFile << "player 2 is: " << p2.getName() << "\n";
    
    Deck d;  //create a deck of cards and shuffles it.
-   d.shuffle();
+//   d.shuffle();
    myFile << "Deck shuffled and ready to deal\n";
    
    dealHand(d, p1, numCards); // handsize of 7 per player dealt.
@@ -81,7 +81,7 @@ int main( ) {
    myFile << p1.getName() << " books: " << p1.showBooks() << "\n"; // prints name and hands.
    myFile << p2.getName() << " books: " << p2.showBooks() << "\n";
 
-   while (d.size() != 0 && p1.getHandSize() != 0 && p2.getHandSize() != 0) { // keep looping game until deck and hands are empty, meaning all pairs have been made.
+   while (d.size() > 0 || p1.getHandSize() > 0 || p2.getHandSize() > 0) { // keep looping game until deck and hands are empty, meaning all pairs have been made.
 // player 1 turn first.
       playersTurn = 0;
       myFile << p1.getName() << "'s turn\n";
@@ -130,7 +130,7 @@ int main( ) {
 
          }
 
-      } while (playersTurn == 1); 
+      } while (playersTurn == 1 && p1.getHandSize() > 0); 
 
       if(p1.getHandSize() > 0 && boolResult == false) {
          
@@ -237,7 +237,7 @@ int main( ) {
 
          }
 
-      } while (playersTurn == 1); 
+      } while (playersTurn == 1 && p2.getHandSize() > 0); 
 
       if(p2.getHandSize() > 0 && boolResult == false) {
          

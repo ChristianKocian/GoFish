@@ -90,9 +90,31 @@ using namespace std;
 
       } else { 
 
-         ss << r;
-         strRank = ss.str();
-       
+         switch (r) // four special cases will not need to be converted to string since i will hard code their string with a switch.
+
+         {
+
+         case 2: strRank = "2";
+                  break;
+         case 3: strRank = "3";
+                  break;
+         case 4: strRank = "4";
+                  break;
+         case 5: strRank = "5";
+                  break;
+         case 6: strRank = "6";
+                  break;
+         case 7: strRank = "7";
+                  break;
+         case 8: strRank = "8";
+                  break;
+         case 9: strRank = "9";
+                  break;
+         case 10: strRank = "10";
+                  break;
+ 
+         }
+
       }
         
    return (strRank); // should convert the integer r into a string and return it.

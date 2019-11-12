@@ -65,7 +65,8 @@ using namespace std;
 
    int  Deck::size() const { // # cards left in the deck
 
-      int remainingCards = SIZE - (myIndex + 1); // total cards minus number dealt. plus one bc it started at 0 not 1 index.
+      int remainingCards = (SIZE - 0) - (myIndex + 0); // total cards minus number dealt. plus one bc it started at 0 not 1 index.
+//cout << myIndex << endl;
       return remainingCards;
 
    }

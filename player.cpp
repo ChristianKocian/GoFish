@@ -45,9 +45,9 @@ using namespace std;
 
       }
 
-      for (int i = 0; i < length - 2; i++) { // loops will run through each card in the vector 
+      for (int i = 0; i < length - 1; i++) { // loops will run through each card in the vector 
 
-         for (int j = i + 1; j < length - 1; j++) { // should stop right at end of vector, and begin one index ahead of i index each outer loop.
+         for (int j = i + 1; j < length; j++) { // should stop right at end of vector, and begin one index ahead of i index each outer loop.
 
             if ((myHand[i]).getRank() == (myHand[j]).getRank()) { // gotta compare the ranks. if equal then return the pairs into c1 and c2.
 
@@ -74,8 +74,8 @@ using namespace std;
 
    Card Player::chooseCardFromHand() const {
       
-      int Length = myHand.size(); // gets the size of hand so we can use % for rand gen.
-      long choose = (rand() % Length); // num between 0 and n -1 cards. index for hand vector to return card.
+      int length = myHand.size(); // gets the size of hand so we can use % for rand gen.
+      long choose = (rand() % length); // num between 0 and n -1 cards. index for hand vector to return card.
 
       return myHand[choose];
 
@@ -112,7 +112,7 @@ using namespace std;
 
       for (int i = 0; i < length; i++) { // should stop right at end of vector, 
 
-         if ((myHand[i]) == c) { // gotta compare the ranks and suits. 
+         if ((myHand[i]).getRank() == c.getRank()) { // gotta compare the ranks and suits. 
 
             Card saveCard = myHand[i]; // save from vector to return it.
             myHand.erase(myHand.begin() + i); // delete the card from vector.
