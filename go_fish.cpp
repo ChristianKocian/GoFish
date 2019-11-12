@@ -51,7 +51,7 @@ int main( ) {
    myFile << "player 2 is: " << p2.getName() << "\n";
    
    Deck d;  //create a deck of cards and shuffles it.
-//   d.shuffle();
+   d.shuffle();
    myFile << "Deck shuffled and ready to deal\n";
    
    dealHand(d, p1, numCards); // handsize of 7 per player dealt.
